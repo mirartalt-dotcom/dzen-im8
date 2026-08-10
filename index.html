@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>DZEN × IM8 — что мы забираем у бренда Бекхэма</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4F1EA; --ink:#2B2A26; --green:#A8C96B; --orange:#C2791B; --purple:#7A5C93;
+    --ink-soft:rgba(43,42,38,.72); --ink-faint:rgba(43,42,38,.5);
+    --card:#FFFFFF; --line:rgba(43,42,38,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Arial,sans-serif;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15}
+
+  /* HERO */
+  header{padding:72px 0 56px;text-align:center}
+  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:22px}
+  h1{font-size:clamp(38px,6vw,62px);margin-bottom:18px}
+  h1 em{font-style:italic;color:var(--orange)}
+  .lead{max-width:640px;margin:0 auto;color:var(--ink-soft);font-size:17.5px}
+  .lead b{color:var(--ink)}
+
+  /* STAT BAND */
+  .band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;margin:26px 0 0}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 18px;text-align:center}
+  .stat .n{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,3.6vw,40px);font-weight:700}
+  .stat .l{font-size:12.5px;color:var(--ink-faint);margin-top:2px}
+  .band-note{text-align:center;font-size:12.5px;color:var(--ink-faint);margin-top:22px}
+
+  /* SECTIONS */
+  section{padding:64px 0 8px}
+  .sec-head{margin-bottom:34px}
+  .sec-num{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  h2{font-size:clamp(28px,4.2vw,40px)}
+  .sec-sub{color:var(--ink-soft);max-width:620px;margin-top:10px}
+
+  /* INSIGHT CARD */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:26px;box-shadow:0 1px 2px rgba(43,42,38,.04)}
+  .card-grid{display:grid;grid-template-columns:1fr 1fr}
+  @media(max-width:720px){.card-grid{grid-template-columns:1fr}}
+  .half{padding:30px 32px}
+  .half.fact{border-right:1px solid var(--line)}
+  @media(max-width:720px){.half.fact{border-right:none;border-bottom:1px solid var(--line)}}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:16px}
+  .tag.im8{background:rgba(43,42,38,.07);color:var(--ink-soft)}
+  .half h3{font-size:23px;margin-bottom:10px}
+  .half p{color:var(--ink-soft);font-size:15px}
+  .half p+p{margin-top:10px}
+  .half p b{color:var(--ink)}
+  .quote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:19px;color:var(--ink);margin-top:14px;padding-left:14px;border-left:3px solid var(--line)}
+
+  /* accent themes for "забираем" half */
+  .g .tag.dzen{background:rgba(168,201,107,.25);color:#5a7332}
+  .o .tag.dzen{background:rgba(194,121,27,.16);color:var(--orange)}
+  .p .tag.dzen{background:rgba(122,92,147,.16);color:var(--purple)}
+  .g{border-top:4px solid var(--green)}
+  .o{border-top:4px solid var(--orange)}
+  .p{border-top:4px solid var(--purple)}
+
+  .steps{margin-top:14px;font-size:15px;color:var(--ink-soft)}
+  .steps li{margin:7px 0 0 18px}
+  .steps b{color:var(--ink)}
+
+  /* CAN / CAN'T */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:6px 0 26px}
+  @media(max-width:720px){.duo{grid-template-columns:1fr}}
+  .rules{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 30px}
+  .rules h3{font-size:22px;margin-bottom:14px}
+  .rules ul{list-style:none}
+  .rules li{padding:8px 0 8px 30px;position:relative;font-size:15px;color:var(--ink-soft);border-top:1px dashed var(--line)}
+  .rules li:first-of-type{border-top:none}
+  .rules li b{color:var(--ink)}
+  .rules li::before{position:absolute;left:0;top:8px;font-weight:700}
+  .ok li::before{content:"✓";color:#5a7332}
+  .no li::before{content:"✕";color:#B0433A}
+  .rules .note{font-size:12.5px;color:var(--ink-faint);margin-top:14px}
+
+  /* BONUS SECTION */
+  .bonus{background:var(--ink);border-radius:24px;padding:56px 8px 40px;margin:70px 0 0;color:var(--cream)}
+  .bonus .wrap-in{max-width:760px;margin:0 auto;padding:0 24px}
+  .bonus .sec-num{color:var(--green)}
+  .bonus h2{color:#fff}
+  .bonus .sec-sub{color:rgba(244,241,234,.65)}
+  .b-item{border-top:1px solid rgba(244,241,234,.15);padding:24px 0}
+  .b-item:first-of-type{margin-top:26px}
+  .b-item h3{font-size:22px;color:#fff;margin-bottom:8px}
+  .b-item h3 span{color:var(--green);margin-right:10px;font-feature-settings:"tnum"}
+  .b-item p{color:rgba(244,241,234,.72);font-size:15px}
+  .b-item p b{color:#fff}
+
+  footer{padding:52px 0 60px;text-align:center;color:var(--ink-faint);font-size:13px}
+  footer .z{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;letter-spacing:.35em;color:var(--ink);margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="kicker">DZEN · разбор конкурента · август 2026</div>
+  <h1>Что мы забираем<br>у бренда <em>Бекхэма</em></h1>
+  <p class="lead">IM8 — витаминный напиток Дэвида Бекхэма. За полтора года — самый быстрорастущий бренд добавок в истории. Мы разобрали, <b>как</b> они это сделали, и что из этого переносится на лимонады DZEN.</p>
+
+  <div class="band">
+    <div class="stats">
+      <div class="stat"><div class="n">19 мес.</div><div class="l">от запуска до $200 млн годовой выручки</div></div>
+      <div class="stat"><div class="n">27 сек.</div><div class="l">между заказами</div></div>
+      <div class="stat"><div class="n">800 000+</div><div class="l">клиентов в 43 странах</div></div>
+      <div class="stat"><div class="n">$1 млрд</div><div class="l">на маркетинг — без продажи доли</div></div>
+    </div>
+    <div class="band-note">Цифры — из пресс-релизов Prenetics (материнская компания IM8) и TechCrunch, июль 2026</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num" style="color:var(--orange)">Инсайт 01 · согласовано</div>
+    <h2>Продавать войну, а не пользу</h2>
+  </div>
+  <div class="card o">
+    <div class="card-grid">
+      <div class="half fact">
+        <span class="tag im8">Факт про IM8</span>
+        <h3>Они не говорят «мы полезные» — они бьют в конкурента</h3>
+        <p>На сайте IM8 — целая страница «IM8 против AG1» (лидер рынка): вкуснее, больше исследований, не нужен холодильник. Новичок растёт быстрее, когда прислоняется к лидеру и бьёт его по конкретным пунктам.</p>
+      </div>
+      <div class="half">
+        <span class="tag dzen">Забираем в DZEN</span>
+        <h3>Наш враг — кола</h3>
+        <p>Бьём в сладкую газировку на 100% — маркетингом, не вкусом. На банке, тейбл-тенте, в меню: <b>«В банке колы — 10+ ложек сахара. В DZEN — ноль»</b>. Одна картинка с горкой сахара сильнее абзаца текста.</p>
+        <p>Юридическая рамка: сравниваем с «обычной газировкой», не с брендом по имени — за уничижение конкурента и «самый/единственный» без доказательств ФАС штрафует до 500 тыс. ₽.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num" style="color:var(--purple)">Инсайт 02 · согласовано</div>
+    <h2>Амбассадоры-совладельцы</h2>
+  </div>
+  <div class="card p">
+    <div class="card-grid">
+      <div class="half fact">
+        <span class="tag im8">Факт про IM8</span>
+        <h3>Звёзды получают долю, а не гонорар</h3>
+        <p>Все амбассадоры IM8 — теннисистка №1 Соболенко, гонщик F1 Бирман, баскетболист Адетокумбо — становятся <b>акционерами материнской компании</b>, а не получают процент от продаж «своего» продукта.</p>
+        <p class="quote">«Яннис выбрал 100% акциями вместо любых денег» — пресс-релиз, апрель 2026</p>
+        <p>И ключевое: каждый сначала месяцами сам пил продукт — и только потом становился совладельцем. Поэтому их реклама неотличима от искренней рекомендации.</p>
+      </div>
+      <div class="half">
+        <span class="tag dzen">Забираем в DZEN</span>
+        <h3>Доля вместо гонорара — в России это уже работает</h3>
+        <p>Прецеденты: Михаил Литвин — <b>40% в Lit Energy</b> (выручка ~9–13 млрд ₽ за 2024), Ксения Дукалис — 45% в лимонадах «Река». Оформляется долей в ООО или лицензионным договором с процентом от выручки.</p>
+        <ul class="steps">
+          <li><b>Шаг 1:</b> отправляем ящик DZEN без всяких условий</li>
+          <li><b>Шаг 2:</b> человек пьёт и влюбляется в продукт</li>
+          <li><b>Шаг 3:</b> предлагаем процент от прибыли направления — «ты не рекламируешь, ты совладелец»</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num" style="color:#5a7332">Инсайт 03 · согласовано</div>
+    <h2>Своя цифра-доказательство</h2>
+  </div>
+  <div class="card g">
+    <div class="card-grid">
+      <div class="half fact">
+        <span class="tag im8">Факт про IM8</span>
+        <h3>Одно исследование кормит весь маркетинг</h3>
+        <p>IM8 провёл 12-недельное рандомизированное исследование — и теперь вся реклама живёт на его цифрах: <b>«95% почувствовали больше энергии, 85% — меньше вздутия»</b>. Проценты работают лучше любых прилагательных.</p>
+      </div>
+      <div class="half">
+        <span class="tag dzen">Забираем в DZEN</span>
+        <h3>Лестница исследований в России</h3>
+        <ul class="steps">
+          <li><b>Лаборатория</b> (~5–20 тыс. ₽, 1–2 недели): официальный протокол «0 г сахара» и клетчатки — право писать это на банке</li>
+          <li><b>Слепая дегустация</b> в своих же пиццериях: рождается наша цифра — «N% не поверили, что без сахара»</li>
+          <li><b>Роскачество</b>: знак «Функциональный продукт» — сертификация, созданная ровно под продукты с пребиотиками</li>
+          <li><b>ФИЦ питания</b> (бывший НИИ питания) — уровень «клинически подтверждено», на будущее</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num" style="color:var(--orange)">Инсайт 04 · согласовано</div>
+    <h2>Вкус — это технология</h2>
+  </div>
+  <div class="card o">
+    <div class="card-grid">
+      <div class="half fact">
+        <span class="tag im8">Факт про IM8</span>
+        <h3>Проблему «полезное = невкусно» решил один ингредиент</h3>
+        <p>IM8 использует подсластитель <b>Reb M</b> — редкую фракцию стевии, полученную ферментацией: сладость сахара без горького послевкусия обычной стевии. Независимые обзоры ставят вкусу 9/10 — редкость для «полезных» напитков.</p>
+      </div>
+      <div class="half">
+        <span class="tag dzen">Забираем в DZEN</span>
+        <h3>Переходим с сукралозы на Reb M</h3>
+        <p>Проверено: Reb M <b>разрешён в России</b> (входит в добавку Е960), стоит <b>около 1 ₽ на банку</b> — в масштабе себестоимости это ничто. Закупка: московский импортёр или напрямую из Китая, пробники почти бесплатны.</p>
+        <p>Нюанс: чистый Reb M плохо растворяется — весь рынок (включая OLIPOP) использует смеси, например с эритритом. Тестируем три варианта рецептуры с производством.</p>
+        <p>Бонус: на банке появится <b>«подслащено стевией нового поколения»</b> — врачи охотнее рекомендуют стевию, чем сукралозу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num" style="color:var(--purple)">Инсайт 05 · согласовано</div>
+    <h2>Эксперт-щит</h2>
+    <p class="sec-sub">Слоган IM8 по смыслу: «не инфлюенсеры — учёные». Их щит — врач клиники Мэйо и бывший главный учёный NASA, и учёные сами снимают ролики.</p>
+  </div>
+  <div class="card p">
+    <div class="card-grid">
+      <div class="half fact">
+        <span class="tag im8">Факт про IM8</span>
+        <h3>Учёные — их главный продавец доверия</h3>
+        <p>Научный совет вынесен на первый план всего маркетинга. Но есть и урок от обратного: вся критика IM8 в прессе — про одно: <b>обещали больше, чем доказали</b>. Диетологи и юристы разбирают их преувеличения публично.</p>
+      </div>
+      <div class="half">
+        <span class="tag dzen">Забираем в DZEN</span>
+        <h3>Врачи вместо звёзд — и только честные слова</h3>
+        <p>Наш ресёрч показал: в разрешённых для рекламы каналах (Telegram, VK, Дзен, YouTube) врачи доказательной медицины дают <b>чистую репутацию + прицельное доверие + цену в разы ниже звёзд</b>. Гастроэнтеролог, говорящий про клетчатку, — это наш инулин из первых уст.</p>
+        <p>Правило брифа: говорим экспертам только то, что подтверждено протоколом. Иначе критика прилетит от тех, кого позвали в союзники.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="duo">
+    <div class="rules ok">
+      <h3>Можно писать</h3>
+      <ul>
+        <li><b>«0 г сахара»</b> — с протоколом лаборатории (порог ≤0,5 г на 100 мл)</li>
+        <li><b>«Источник пищевых волокон»</b> — если ≥5 г клетчатки на банку 330 мл</li>
+        <li><b>«Содержит пребиотик инулин, Х г»</b> — факт состава, разрешён всегда</li>
+        <li>Цифра из опроса — точно в формулировке отчёта</li>
+      </ul>
+      <div class="note">Пороги — из техрегламента ТР ТС 022/2011, приложение 5</div>
+    </div>
+    <div class="rules no">
+      <h3>Нельзя писать</h3>
+      <ul>
+        <li>«Улучшает пищеварение», «укрепляет иммунитет», «лечит кишечник»</li>
+        <li>«Продлевает жизнь» — любые обещания эффекта на здоровье</li>
+        <li>«Самый полезный», «единственный без сахара»</li>
+        <li>Сравнения с конкурентом по имени в уничижительном ключе</li>
+      </ul>
+      <div class="note">Штраф ФАС для юрлиц — до 500 000 ₽ за публикацию</div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<div class="bonus">
+  <div class="wrap-in">
+    <div class="sec-head">
+      <div class="sec-num">Ты это не отмечал — но я бы забрал</div>
+      <h2>Ещё шесть приёмов IM8,<br>которые стоят почти ноль</h2>
+      <p class="sec-sub">Каждый из них у IM8 доказанно работает, а для нас почти бесплатен.</p>
+    </div>
+
+    <div class="b-item">
+      <h3><span>06</span>Личная легенда основателя</h3>
+      <p>Весь бренд IM8 стоит на реальной боли Бекхэма: Виктория годами раскладывала ему 16 таблеток в день, а он «не мог себя заставить их пить» — так родился один вкусный напиток вместо горсти таблеток. <b>Наш аналог: ресторатор с девятью пиццериями, который годами смотрел, как гости запивают пиццу сахарной бомбой, — и сделал альтернативу, которую пьёт сам.</b> У основателя уже есть свои медиа — история ничего не стоит и работает лучше любой рекламы.</p>
+    </div>
+
+    <div class="b-item">
+      <h3><span>07</span>Польза, посчитанная в цифре</h3>
+      <p>IM8 не говорит «мы полезные» — он говорит «заменяет 16 добавок» и «закрывает 9 систем организма». <b>Наш аналог: «клетчатка как в двух яблоках — в одной банке».</b> Одна проверенная цифра запоминается лучше десяти прилагательных.</p>
+    </div>
+
+    <div class="b-item">
+      <h3><span>08</span>Технология с именем</h3>
+      <p>Смесь ингредиентов IM8 называется «CRT8®» — по сути просто рецептура, но имя и значок ® создают ощущение уникальной разработки. <b>Наш аналог: назвать свой пребиотический комплекс</b> — например, «DZEN Balance Complex» на банке. Стоит ноль, добавляет веса.</p>
+    </div>
+
+    <div class="b-item">
+      <h3><span>09</span>Набор по умолчанию + гарантия</h3>
+      <p>IM8 сделал покупкой по умолчанию не банку, а набор («Beckham Stack») — средний чек первого заказа вырос с $110 до $233. Плюс гарантия возврата денег 90 дней. <b>Наш аналог: «сет знакомства» из трёх вкусов вместо одной банки — и «не поверил, что без сахара? Вернём деньги»</b>. В своей же пиццерии это почти бесплатный способ снять страх первой покупки.</p>
+    </div>
+
+    <div class="b-item">
+      <h3><span>10</span>Упаковка как подарок</h3>
+      <p>Подписчики IM8 получают welcome-набор: фирменную красную кружку и дорожные саше — обзорщики отдельно хвалят премиальность упаковки. <b>Наш аналог: фирменный бокал DZEN к сету, красивая коробка для ящика амбассадорам</b> — ящик, который приятно распаковать на камеру, сам становится контентом.</p>
+    </div>
+
+    <div class="b-item">
+      <h3><span>11</span>Цифры роста — это тоже контент</h3>
+      <p>«Заказ каждые 27 секунд», «50 млн порций» — IM8 превращает собственные рекорды в вирусные посты. <b>Наш аналог: «первые 10 000 банок за N дней», «каждая третья кола в наших пиццериях заменена на DZEN»</b> — вехи роста публикуем как новости.</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="z">DZEN</div>
+  Разбор бренда IM8 (Prenetics × David Beckham) · внутренний документ · 10.08.2026
+</footer>
+
+</body>
+</html>
